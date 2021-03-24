@@ -1,7 +1,7 @@
 <h1 align="center">Bootcamp Ignite: Github Explorer</h1>
 
 <p align="center">
-  <img src="https://github.com/lucasiori/ignite_github-exporer/blob/main/.github/demo.png" alt="Demo" />
+  <img src="https://github.com/marciodiasdeveloper/ignite/blob/main/aulas/01-github-explorer/.github/demo.png" alt="Demo" />
 </p>
 
 <p align="center">

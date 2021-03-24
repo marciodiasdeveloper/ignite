@@ -1,5 +1,5 @@
 const path = require('path');
-const htmlWebpackPlugin = require('html-webpack-plugin');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -18,7 +18,7 @@ module.exports = {
         contentBase: path.resolve(__dirname, 'public'),
     },
     plugins: [
-        new htmlWebpackPlugin({
+        new HTMLWebpackPlugin({
             template: path.resolve(__dirname, 'public', 'index.html')
         })
     ],

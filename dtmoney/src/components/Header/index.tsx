@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import logoImg from '../../assets/logo.svg';
 
 import { 
@@ -6,6 +7,16 @@ import {
 } from './styles';
 
 export function Header() {
+    const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false);
+    
+    function handleOpenTransactionModal() {
+
+    }
+
+    function handleCloseTransactionModal() {
+
+    }
+    
     return (
         <Container>
             <Content>

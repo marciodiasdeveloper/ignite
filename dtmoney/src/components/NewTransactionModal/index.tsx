@@ -9,6 +9,7 @@ import {
     TransactionTypeContainer,
     RadioBox
 } from './styles';
+import { api } from '../../services/api';
 
 interface NewTransactionModalProps {
     isOpen: boolean;
@@ -22,7 +23,15 @@ export function NewTransactionModal({ isOpen, onRequestClose}: NewTransactionMod
     const [type, setType] = useState('deposit');
 
     function handleCreateNewTransaction(event:FormEvent) {
-        event.preventDefault()
+        event.preventDefault();
+
+        const data = {
+            title,
+            value,
+            category,
+            type
+        }
+        api.post('/transactions', data);
     }
 
     return (

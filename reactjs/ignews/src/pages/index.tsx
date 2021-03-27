@@ -1,4 +1,4 @@
-import { GetServerSideProps, GetStaticProps } form 'next';
+import { GetServerSideProps, GetStaticProps } from 'next';
 import Head from 'next/Head';
 import { SubscribeButton } from '../components/SubscribeButton';
 import styles from './home.module.scss';

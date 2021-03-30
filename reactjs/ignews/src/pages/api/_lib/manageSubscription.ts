@@ -30,7 +30,7 @@ export async function saveSubscription(
         id: subscription.id,
         userId: userRef,
         status: subscription.status,
-        price_id: subscription.application_fee_percent.data[0].price.id,
+        price_id: subscription.items.data[0].price.id
     }
 
     await fauna.query(

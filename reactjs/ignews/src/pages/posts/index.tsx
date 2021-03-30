@@ -55,9 +55,9 @@ export const getStaticProps: GetStaticProps = async () => {
             title: RichText.asText(post.data.title),
             excerpt: post.data.content.find(content => content.type === 'paragraph')?.text ?? '',
             updatedAt: new Date(post.last_publication_date).toLocaleDateString('pt-BR', {
-                day: '2',
+                day: '2-digit',
                 month: 'long',
-                year: 'number'
+                year: 'numeric'
             })
         };
     });

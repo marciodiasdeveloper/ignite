@@ -4,3 +4,5 @@ reactjs/ignews/.env.local
 reactjs/ignews/.env.production
 reactjs/ignews/.env.development
 reactjs/ignews/node_modules
+
+nodejs/fundamentos-nodejs/node_modules

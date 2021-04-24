@@ -12,7 +12,7 @@ const customers = [];
 function verifyIfExistsAccountCPF(request, response, next) {
     const { cpf } = request.headers;
     // const { cpf } = request.params;
-    const customer customers.find(customer => customer.cpf === cpf);
+    const customer = customers.find(customer => customer.cpf === cpf);
 
     if(!customer) {
         return response.status(400).json({ error: "Customer not found."});
@@ -77,7 +77,7 @@ app.post("/deposit", verifyIfExistsAccountCPF, (request, response ) => {
     return response.status(201).send();
 });
 
-app.post('/withdraw', verifyIfExistsAccountCPF, (request, response) => {
+app.post("/withdraw", verifyIfExistsAccountCPF, (request, response) => {
     const { amount } = request.body;
     const { customer } = request;
 
@@ -99,15 +99,40 @@ app.post('/withdraw', verifyIfExistsAccountCPF, (request, response) => {
 
 });
 
-app.get('/statement/data', verifyIfExistsAccountCPF, (request, response) => {
+app.get("/statement/data", verifyIfExistsAccountCPF, (request, response) => {
     const { customer } = request;
     const { date } = request.query;
 
-    const dateFormat = new Date(date + "00:00");
+    const dateFormat = new Date(date + " 00:00");
 
-    const statement = customer.statement.filter((statement) => statement.created_at.toDateString() === new Date(dateFormat).toDateString())
+    const statement = customer.statement.filter((statement) => 
+        statement.created_at.toDateString() === new Date(dateFormat).toDateString()
+    );
 
     return response.json(statement);
+});
+
+app.put("/account", verifyIfExistsAccountCPF, (request, response) => {
+    const { name } = request.body;
+    const { customer } = request;
+
+    customer.name = name;
+
+    return response.status(201).send();
+});
+
+app.get("/account", verifyIfExistsAccountCPF, (request, response) => {
+    const { customer } = request;
+
+    return response.json(customer);
+});
+
+app.delete("/account", verifyIfExistsAccountCPF, (request, response) => {
+    const { customer } = request;
+
+    customer.splice(customer, 1);
+
+    return response.status(200).json(customers);
 });
 
 app.listen(3333);

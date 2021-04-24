@@ -1,9 +1,3 @@
-/**
- * name - string
- * duration - number
- * educator - string
- */
-
 interface Course {
     name: string;
     duration?: number;

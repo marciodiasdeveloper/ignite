@@ -26,14 +26,18 @@ class ImportCategoryUseCase {
                     name,
                     description
                 });
-            }).on("end", () => {
+            })
+            .on("end", () => {
                 resolve(categories);
-            });
+            })
+            .on("error", (err) => {
+                reject(err);
+            })
         });
     }
 
-    execute(file: Express.Multer.File): void {
-        const categories = this.loadCategories(file);
+    async execute(file: Express.Multer.File): Promise<void> {
+        const categories = await this.loadCategories(file);
     }
 }
 

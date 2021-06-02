@@ -1,18 +1,11 @@
 interface IRequest {
     user_id: string;
-    avatarFile: string;
+    avatar_file: string;
 }
-
-
-// Adicionar coluna avatar na tabela de users
-// Refatorar usuário com coluna avatar
-// Configuracao upload multer
-// Criar regra de negocio do upload
-// Criar controller
 
 class UpdateUserAvatarUseCase {
 
-    async execute() {
+    async execute({ user_id, avatar_file }: IRequest) {
 
     }
 }

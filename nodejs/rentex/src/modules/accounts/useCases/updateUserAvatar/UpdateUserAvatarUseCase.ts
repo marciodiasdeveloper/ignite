@@ -1,4 +1,7 @@
-
+interface IRequest {
+    user_id: string;
+    avatarFile: string;
+}
 
 
 // Adicionar coluna avatar na tabela de users

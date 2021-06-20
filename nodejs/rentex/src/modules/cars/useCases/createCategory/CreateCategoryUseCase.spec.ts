@@ -1,5 +1,5 @@
 describe("Create category", () => {
-    it("Waiting", () => {
+    it("should be able to create a new category", () => {
 
     });
 });

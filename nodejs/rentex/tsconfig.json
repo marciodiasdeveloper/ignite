@@ -1,8 +1,8 @@
 {
-  "compilerOptions": {                 
-    "target": "es5",                                
-    "module": "commonjs",                           
-    "baseUrl": "./src",                            
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "baseUrl": "./src",
     "paths": {
       "@modules/*": ["modules/*"],
       "@config/*": ["config/*"],
